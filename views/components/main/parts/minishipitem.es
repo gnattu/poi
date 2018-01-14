@@ -128,6 +128,7 @@ export const MiniShipRow = connect(
   render() {
     const { ship, $ship, labelStatus, layout, doubleTabbed, enableAvatar, compact } = this.props
     const hideShipName = enableAvatar && compact
+    //const hideShipName = false
     if (!ship)
       return <div></div>
     const labelStatusStyle = getStatusStyle(labelStatus)
@@ -169,7 +170,8 @@ export const MiniShipRow = connect(
             }>
               <div className={shipInfoClass}>
                 {
-                  !hideShipName && (
+                  //!hideShipName && (
+                  !hideShipName ? (
                     <Fragment>
                       <span className="ship-name" style={labelStatusStyle}>
                         {i18n.resources.__($ship.api_name || '??')}
@@ -178,7 +180,13 @@ export const MiniShipRow = connect(
                         Lv. {ship.api_lv || '??'}
                       </span>
                     </Fragment>
-                  )
+                  ) :
+                    <Fragment>
+                      <span className="ship-lv-text-compact" style={labelStatusStyle}>
+                        Lv. <br />{ship.api_lv || '??'}
+                      </span>
+                    </Fragment>
+
                 }
               </div>
             </OverlayTrigger>

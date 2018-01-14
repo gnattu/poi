@@ -94,6 +94,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   height: 37px;
+  padding-left: 42px
 }
 .miniship .ship-details-mini .ship-item .ship-info .ship-type,
 .miniship .ship-details-mini .ship-item .ship-info .ship-speed {
@@ -327,4 +328,12 @@
   /* csslint ignore:start */
   text-align: left !important;
   /* csslint ignore:end */
+}
+.ship-lv-text-compact {
+  display: flex;
+  font-size: 70%;
+  line-height: 1;
+  margin-right: 4px;
+  margin-top: 16px;
+  text-shadow: black 0em 0em 0.2em, black 0em 0em 0.2em, black 0em 0em 0.2em;
 }
